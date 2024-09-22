@@ -1,0 +1,15 @@
+<section class="buttons">
+    <button (click)="pageBck()"><</button>
+    <p>Page: {{ page + 1 }}</p>
+    <button (click)="pageFw()">></button>
+</section>
+<section class="pokemon-list">
+@for (pokemonList of pokemonsList; track $index) {
+    <app-pokemon [pokemon]="pokemonList"></app-pokemon>
+}
+</section>
+<section class="buttons">
+    <button (click)="pageBck()"><</button>
+    <p>Page: {{ page + 1 }}</p>
+    <button (click)="pageFw()">></button>
+</section>

@@ -1,0 +1,15 @@
+nav{
+    height: 75px;
+    background-color: #FF1C1C;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav img{
+    width: 70px;
+}
+
+nav h1{
+    color: #f6f6f9;
+}

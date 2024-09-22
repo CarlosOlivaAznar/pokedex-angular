@@ -1,0 +1,163 @@
+/* Informacion basica del pokemon */
+.poke-info{
+    width: 85%;
+    margin: 30px auto 0;
+    border-radius: 25px;
+    background-color: #f6f6f9;
+    display: flex;
+}
+
+.poke-info div img{
+    width: 100%;
+}
+
+/* Informacion lateral */
+.poke-info div.info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.poke-info div.info h1{
+    font-size: 40px;
+    color: #2d2d2d;
+}
+
+.poke-info div.info h2{
+    margin-top: 20px;
+    color: #2d2d2d;
+}
+
+.poke-info div.info .info-box{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.poke-info div.info .info-box div{
+    font-size: 17px;
+    padding: 7px 35px;
+    border-radius: 25px;
+    border: 2px solid #2d2d2d;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.poke-info div.info .info-box div img{
+    width: 25px;
+}
+
+/* Datos del pokemon */
+.data{
+    width: 85%;
+    margin: 30px auto 0;
+    border-radius: 25px;
+    padding: 20px 15px;
+    background-color: #f6f6f9;
+    display: flex;
+    flex-direction: column;
+}
+
+.data .stats{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.data .stats div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+}
+
+.data .stats .stats-bar{
+    width: 150px;
+    height: 25px;
+    border: 2px solid #2d2d2d;
+    border-radius: 15px;
+}
+
+.data .stats .stats-bar div{
+    height: 100%;
+    border-radius: 15px;
+}
+
+/* Tabla de movimientos */
+.data div.table{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.data div.table .selector{
+    width: 150px;
+}
+
+.data div.table .selector ul{
+    list-style-type: none;
+    border-radius: 15px;
+    border: 2px solid #2d2d2d;
+}
+
+.data div.table .selector ul li{
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #c5c4c4;
+    cursor: pointer;
+}
+
+.data div.table .selector ul li.selected{
+    background-color: #2d2d2d;
+    color: white;
+}
+
+.data div.table .selector ul li.selected:hover{
+    background-color: #2d2d2d;
+}
+
+.data div.table .selector ul li:hover{
+    transition: 0.4s;
+    background-color: #c5c4c4;
+}
+
+.data div.table .selector ul li:first-child{
+    border-radius: 12px 12px 0 0;
+}
+
+.data div.table .selector ul li:last-child{
+    border-radius: 0 0 12px 12px;
+    border-bottom: none;
+}
+
+/* Tabla de movimientos */
+.data div.table table{
+    width: 100%;
+    text-align: left;
+}
+
+.data div.table table td{
+    padding: 10px;
+}
+
+.data div.table table td.center{
+    text-align: center;
+}
+
+.data div.table table span.red{
+    color: #df0808;
+}
+
+.data div.table table span.type{
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+
+

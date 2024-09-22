@@ -1,0 +1,27 @@
+.pokemon-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 24px;
+    margin-top: 20px;
+}
+
+.buttons{
+    width: 100%;
+    margin-top: 30px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.buttons button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #FF1C1C;
+    color: #f6f6f9;
+    font-size: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}

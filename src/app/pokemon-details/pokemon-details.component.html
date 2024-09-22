@@ -1,0 +1,85 @@
+<div class="poke-info">
+    <div><img [src]="pokemonDetails.sprites.other['official-artwork'].front_default" [alt]="pokemonName"></div>
+    <div class="info">
+        <h1>{{ capitalizeFirstLetter(pokemonName) }}</h1>
+        <h2>Types</h2>
+        <div class="info-box">
+        @for (type of pokemonDetails.types; track $index) {
+            <div style="background-color: {{ color[type.type.name].background }}; color: {{ color[type.type.name].text }};">{{ capitalizeFirstLetter(type.type.name) }}</div>
+        }
+        </div>
+            
+        <h2>Abilities</h2>
+        <div class="info-box">
+            @for (ability of pokemonDetails.abilities; track $index) {
+                <div>
+                    {{ capitalizeFirstLetter(ability.ability.name) }}
+                    @if (ability.is_hidden) {
+                        <img src="/star.svg" alt="star">
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="data">
+    <div class="stats">
+        @for (stat of pokemonDetails.stats; track $index) {
+            <div>
+                <p>{{ stat.stat.name }}: {{ stat.base_stat }}</p>
+                <div class="stats-bar" >
+                    @if (stat.base_stat < 45) {
+                        <div style="width: {{ stat.base_stat }}%; background-color: #df0808;"></div>
+                    } @else if (stat.base_stat < 75) {
+                        <div style="width: {{ stat.base_stat }}%; background-color: #e4e405;"></div>
+                    } @else {
+                        <div style="width: {{ stat.base_stat }}%; background-color: #2dcc0d;"></div>
+                    }
+                    
+                </div>
+            </div>
+        }
+    </div>
+    <div class="table">
+        <div class="selector">
+            <ul>
+                @for (generacion of getGeneraciones(); track $index) {
+                    @if(showGeneration === $index + 1){
+                        <li class="selected" (click)="setGeneration($index+1)">{{generacion}}st gen</li>
+                    } @else {
+                        <li (click)="setGeneration($index+1)">{{generacion}}st gen</li>
+                    }
+                }
+            </ul>
+        </div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Power / PP</th>
+                <th>Type</th>
+                <th>Accuracy</th>
+                <th>Generation</th>
+            </tr>
+            @for(move of showMoves; track $index){
+                <tr>
+                    <td>{{ moveDetails[move.name]?.name }}</td>
+                    <td>
+                        @if(moveDetails[move.name]?.power != null){
+                            {{ moveDetails[move.name]?.power }}
+                        } @else {
+                            <span class="red">Status</span>
+                        }
+                         / {{ moveDetails[move.name]?.pp }}
+                    </td>
+                    <td class="center">
+                        <span class="type" style="background-color: {{ color[moveDetails[move.name]?.type.name].background }}; color: {{ color[moveDetails[move.name]?.type.name].text }};">{{ moveDetails[move.name]?.type.name }}</span>
+                    </td>
+                    <td>{{ moveDetails[move.name]?.accuracy }}</td>
+                    <td>
+                        Gen.{{ moveDetails[move.name]?.generation.url.charAt(moveDetails[move.name]?.generation.url.length -2) }}
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
